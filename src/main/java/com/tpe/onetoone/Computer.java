@@ -1,9 +1,6 @@
 package com.tpe.onetoone;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_computer")
@@ -15,6 +12,9 @@ public class Computer {
     private String serialNo;
 
     private String brand;
+
+    @OneToOne(mappedBy ="Developer03")
+    private Developer03 developer;
 
 
     public Computer(int id, String serialNo, String brand) {
@@ -45,6 +45,15 @@ public class Computer {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+
+    public Developer03 getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(Developer03 developer) {
+        this.developer = developer;
     }
 
     @Override

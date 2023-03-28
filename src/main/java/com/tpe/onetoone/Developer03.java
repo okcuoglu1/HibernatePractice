@@ -1,9 +1,6 @@
 package com.tpe.onetoone;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name= "t_developer03")
@@ -25,7 +22,70 @@ public class Developer03 {
 
 
     //her developer bir bilgisayar veriliyor.
-    //developer'a verilen bilgisayarın verildiği bilgisini tutmak istiyoruz.
+    //developer'a verilen bilgisayarın verildiği bilgisini tutmak istiyoruz.,
+    @OneToOne
+    @JoinColumn(name="c_id")
+    private Computer computer;
 
+    public Developer03() {
+    }
 
+    public Developer03(int id, String name, String email, String branch, Computer computer) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.branch = branch;
+        this.computer = computer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Computer computer) {
+        this.computer = computer;
+    }
+
+    @Override
+    public String toString() {
+        return "Developer03{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", branch='" + branch + '\'' +
+                ", computer=" + computer +
+                '}';
+    }
 }
