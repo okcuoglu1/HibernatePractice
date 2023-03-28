@@ -1,5 +1,8 @@
 package com.tpe.embeddable;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Education {
 
     private String university;
