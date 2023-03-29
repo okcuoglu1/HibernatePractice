@@ -13,9 +13,12 @@ public class Computer {
 
     private String brand;
 
-    @OneToOne(mappedBy ="Developer03")
+    @OneToOne(mappedBy ="computer")
     private Developer03 developer;
 
+
+    public Computer() {
+    }
 
     public Computer(int id, String serialNo, String brand) {
         this.id = id;
@@ -52,9 +55,9 @@ public class Computer {
         return developer;
     }
 
-    public void setDeveloper(Developer03 developer) {
-        this.developer = developer;
-    }
+//    public void setDeveloper(Developer03 developer) {
+//        this.developer = developer;
+//    }
 
     @Override
     public String toString() {
